@@ -103,7 +103,7 @@ The frps.toml file defines the server's operational parameters.
     log_level = "info" # Logging verbosity: debug, info, warn, error.
     log_max_days = 3 # Number of days to retain log files.
 
-    Save and Exit: Press Ctrl+X, then Y, then Enter.
+   Save and Exit: Press Ctrl+X, then Y, then Enter.
 
 3.4. Running frps as a systemd Service
 
