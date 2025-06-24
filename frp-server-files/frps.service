@@ -1,0 +1,16 @@
+# /etc/systemd/system/frps.service - systemd unit file for frps
+[Unit]
+Description=Frp Server Service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+# Specifies the full path to the frps executable and its configuration.
+ExecStart=/usr/bin/frps -c /etc/frp/frps.toml
+Restart=on-failure # Automatically restart frps if it crashes.
+RestartSec=10      # Wait 10 seconds before attempting a restart.
+ExecReload=/bin/kill -HUP $MAINPID # Command to gracefully reload the service.
+
+[Install]
+WantedBy=multi-user.target # Ensures frps starts automatically on system boot.

@@ -1,0 +1,20 @@
+# frps.toml 
+bind_port = 7000 
+
+token = "mysecrettoken"
+
+dashboard_port = 7500 
+
+dashboard_user = "admin"
+
+dashboard_pwd = "pass" 
+
+vhost_http_port = 80
+
+vhost_https_port = 443
+
+log_file = "/var/log/frps.log" 
+
+log_level = "info" 
+
+log_max_days = 3 
