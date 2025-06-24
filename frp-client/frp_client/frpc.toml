@@ -1,0 +1,11 @@
+serverAddr = "13.60.15.144"
+serverPort = 7000
+auth.method = "token"
+auth.token = "mysecrettoken"
+
+[[proxies]]
+name = "my-web-server"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 8000
+# transport.tls.enable = true
