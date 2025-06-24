@@ -3,7 +3,7 @@
 Detailed Guide: Exposing Local Services with fatedier/frp
 
 This document provides a comprehensive guide on how to set up and utilize fatedier/frp to expose local services running behind Network Address Translators (NATs) or firewalls to the public internet.
-1. Introduction to frp
+## 1. Introduction to frp
 
 frp is an open-source, high-performance reverse proxy that facilitates secure and efficient network tunneling. Its primary function is to enable access to services hosted on private networks (e.g., home networks, internal development environments) from external internet locations, overcoming the limitations imposed by NATs and firewalls.
 
@@ -13,21 +13,28 @@ The architecture of frp is based on a client-server model:
 
   frpc (frp client): This component resides on the local machine where the service intended for exposure is hosted. It establishes a persistent, secure tunnel to the frps server, through which all communication for the local service is multiplexed and relayed.
 
-2. Prerequisites
+## 2. Prerequisites
 
 To successfully implement frp, the following resources and foundational knowledge are required:
-    Publicly Accessible Server (VPS):
-        A Virtual Private Server instance from a cloud provider (e.g., AWS EC2, DigitalOcean, Linode, Google Cloud Compute Engine).
-        A Linux-based operating system (e.g., Ubuntu, Debian, CentOS). This guide uses Ubuntu commands.
+
+Publicly Accessible Server (VPS):
+       A Virtual Private Server instance from a cloud provider (e.g., AWS EC2, DigitalOcean, Linode, Google Cloud Compute Engine).
+   A Linux-based operating system (e.g., Ubuntu, Debian, CentOS). This guide uses Ubuntu commands.
         Secure Shell (SSH) access to the server with administrative privileges (sudo).
-    Local Machine:
+   
+    
+Local Machine:
         A personal computer (Windows, macOS, or Linux) where the service to be exposed (e.g., a web server, SSH server, game server) is running.
-    Command-Line Interface Familiarity:
+   
+    
+Command-Line Interface Familiarity:
         Proficiency in basic command-line operations, including directory navigation, file downloading (wget), archive extraction (tar), text editing (nano or equivalent), and executing commands with sudo.
-    A Service to Expose:
+    
+    
+A Service to Expose:
         For the purpose of this guide, a simple Python HTTP server will be used as the local service.
 
-3. Server Setup (frps)
+## 3. Server Setup (frps)
 
 This section outlines the procedure for configuring and deploying the frps component on your public server.
 3.1. Server Preparation
@@ -169,7 +176,7 @@ Proper firewall configuration is critical for security and accessibility. The po
 
     sudo ufw status
 
-4. Local Client Setup (frpc)
+## 4. Local Client Setup (frpc)
 
 This section details the setup of the frpc component on your local machine and its configuration to expose a service.
 4.1. Local Service Preparation (Example: Python HTTP Server)
