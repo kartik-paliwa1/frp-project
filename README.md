@@ -262,22 +262,4 @@ The terminal will display logs indicating a successful connection to the frps se
 
 With both frps and frpc operational, proceed to verify public accessibility of your exposed service.
 
-  Access the frp Dashboard (Optional):
-
-  From any internet-connected device, open a web browser.
-
-  Navigate to http://YOUR_SERVER_PUBLIC_IP:7500 (substitute with your server's actual public IP).
-
-  Log in using the dashboard_user and dashboard_pwd credentials defined in frps.toml.
-
-  Confirm that your "my-web-server" proxy is listed with an "online" status. This confirms successful client-server communication.
-
-  Access Your Exposed Service:
-        If custom_domains was configured in frpc.toml and DNS records are correctly set:
-            Open a web browser and navigate to http://myapp.example.com (replace with your configured custom domain).
-        If custom_domains was NOT configured (and vhost_http_port on frps is 80):
-            Open a web browser and go to http://YOUR_SERVER_PUBLIC_IP.
-            Alternatively, frp may automatically assign a subdomain if subdomain_host is configured on the server (e.g., http://my-web-server.YOUR_SERVER_PUBLIC_IP.nip.io).
-            If vhost_http_port on frps is set to a non-standard port (e.g., 8080), access the service via http://YOUR_SERVER_PUBLIC_IP:8080.
-
-Upon successful connection, the "Hello from my local server!" message (or content from your specific local service) should be displayed in the browser. This confirms that your local service is now publicly accessible via frp.
+ 
